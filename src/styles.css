@@ -129,6 +129,7 @@ nav {
   left: 0;
   width: 100%;
   padding: 24px;
+  box-sizing: border-box;
 }
 .mobile-menu a {
   text-decoration: none;
