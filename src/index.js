@@ -4,8 +4,10 @@ const desktopMenu = $('.desktop-menu');
 const burgerMenu = $('.burger-menu');
 const mobileMenu = $('.mobile-menu');
 const cartMenu = $('.navbar-shopping-cart');
-const shoppingCartContainer = $('#shopping-cart-container');
-const cardsContainer = document.querySelector('.cards-container');
+const shoppingCartContainer = $('.shopping-cart-container-res');
+const cardsContainer = $('.cards-container');
+const productDeltailContainer = $('.product-detail-res');
+const productDetailClose = $('.product-detail-close');
 
 const toggleDesktopMenu = () => {
   const isAsideOpen = !shoppingCartContainer.classList.contains('inactive');
@@ -36,6 +38,14 @@ const toggleCartMenu = () => {
     desktopMenu.classList.add('inactive');
   }
   shoppingCartContainer.classList.toggle('inactive');
+};
+
+const openProductDetalAside = () => {
+  productDeltailContainer.classList.remove('inactive');
+};
+
+const closeProductDetalAside = () => {
+  productDeltailContainer.classList.add('inactive');
 };
 
 const productList = [
@@ -77,6 +87,7 @@ function renderProducts(arr) {
     productCard.classList.add('product-card');
     const productImg = document.createElement('img');
     productImg.setAttribute('src', product.image);
+    productImg.addEventListener('click', openProductDetalAside);
     const productInfo = document.createElement('div');
     productInfo.classList.add('product-info');
     const productInfoDiv = document.createElement('div');
@@ -102,3 +113,4 @@ renderProducts(productList);
 menuEmail.addEventListener('click', toggleDesktopMenu);
 burgerMenu.addEventListener('click', toggleMenuMobile);
 cartMenu.addEventListener('click', toggleCartMenu);
+productDetailClose.addEventListener('click', closeProductDetalAside);
