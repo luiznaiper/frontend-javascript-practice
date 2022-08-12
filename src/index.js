@@ -4,23 +4,23 @@ const desktopMenu = $('.desktop-menu');
 const burgerMenu = $('.burger-menu');
 const mobileMenu = $('.mobile-menu');
 const cartMenu = $('.navbar-shopping-cart');
-const asideCart = $('.product-detail');
+const shoppingCartContainer = $('#shopping-cart-container');
 const cardsContainer = document.querySelector('.cards-container');
 
 const toggleDesktopMenu = () => {
-  const isAsideOpen = !asideCart.classList.contains('inactive');
+  const isAsideOpen = !shoppingCartContainer.classList.contains('inactive');
 
   if (isAsideOpen) {
-    asideCart.classList.add('inactive');
+    shoppingCartContainer.classList.add('inactive');
   }
   desktopMenu.classList.toggle('inactive');
 };
 
 const toggleMenuMobile = () => {
-  const isAsideOpen = !asideCart.classList.contains('inactive');
+  const isAsideOpen = !shoppingCartContainer.classList.contains('inactive');
 
   if (isAsideOpen) {
-    asideCart.classList.add('inactive');
+    shoppingCartContainer.classList.add('inactive');
   }
   mobileMenu.classList.toggle('inactive');
 };
@@ -35,25 +35,13 @@ const toggleCartMenu = () => {
   if (isDesktopMenuOpen) {
     desktopMenu.classList.add('inactive');
   }
-  asideCart.classList.toggle('inactive');
+  shoppingCartContainer.classList.toggle('inactive');
 };
 
 const productList = [
   {
     name: 'Bike',
     price: 120,
-    image:
-      'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-  },
-  {
-    name: 'Screen',
-    price: 220,
-    image:
-      'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-  },
-  {
-    name: 'Notebook',
-    price: 620,
     image:
       'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
   },
